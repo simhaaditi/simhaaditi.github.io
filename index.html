@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aditi Simha portfolio: Software Engineer specializing in cloud-native microservices, REST APIs, distributed systems, real-time data pipelines, and backend modernization." />
+  <meta name="keywords" content="Aditi Simha, Software Engineer, Backend Engineer, Java, Spring Boot, Microservices, REST API, Kubernetes, Kafka, Cloud, Oracle Cerner" />
+  <meta name="author" content="Aditi Simha" />
+  <title>Aditi Simha | Software Engineer</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --surface-strong: #eef3f8;
+      --text: #142033;
+      --muted: #5d6b7c;
+      --line: #dbe4ee;
+      --primary: #0f5f6f;
+      --primary-dark: #0a4552;
+      --accent: #22a28f;
+      --accent-soft: #dff8f3;
+      --shadow: 0 22px 60px rgba(20, 32, 51, 0.10);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(34, 162, 143, 0.14), transparent 32rem),
+        radial-gradient(circle at top right, rgba(15, 95, 111, 0.12), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 1rem;
+      background: var(--primary);
+      color: #fff;
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      z-index: 1000;
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(246, 248, 251, 0.86);
+      border-bottom: 1px solid rgba(219, 228, 238, 0.85);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: 0 14px 32px rgba(15, 95, 111, 0.22);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.35rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 650;
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.3rem;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.68rem 1rem;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--primary);
+      box-shadow: 0 16px 34px rgba(15, 95, 111, 0.16);
+    }
+
+    .nav-cta::after {
+      display: none;
+    }
+
+    .menu-button {
+      display: none;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .menu-button span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      margin: 5px auto;
+      background: currentColor;
+      border-radius: 999px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .menu-button[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-button[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-button[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .hero {
+      padding: 5.5rem 0 3.25rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(219, 228, 238, 0.92);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: clamp(2rem, 4vw, 4rem);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 999px;
+      right: -70px;
+      top: -90px;
+      background: rgba(34, 162, 143, 0.12);
+      filter: blur(2px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.1rem;
+      padding: 0.42rem 0.72rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--primary-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 0.48rem;
+      height: 0.48rem;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(34, 162, 143, 0.14);
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+      max-width: 820px;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.02rem, 1.7vw, 1.22rem);
+      max-width: 720px;
+      color: var(--muted);
+      margin-bottom: 1.65rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.7rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      border-radius: 999px;
+      padding: 0.85rem 1.15rem;
+      border: 1px solid transparent;
+      font-weight: 780;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button.primary {
+      color: #fff;
+      background: var(--primary);
+      box-shadow: 0 16px 32px rgba(15, 95, 111, 0.18);
+    }
+
+    .button.secondary {
+      background: var(--surface);
+      border-color: var(--line);
+      color: var(--primary-dark);
+    }
+
+    .profile-panel {
+      background: #101a2a;
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-panel::before,
+    .profile-panel::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      opacity: 0.62;
+    }
+
+    .profile-panel::before {
+      width: 180px;
+      height: 180px;
+      background: rgba(34, 162, 143, 0.42);
+      top: -60px;
+      right: -70px;
+    }
+
+    .profile-panel::after {
+      width: 210px;
+      height: 210px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      bottom: -90px;
+      left: -80px;
+    }
+
+    .panel-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 1rem;
+      height: 100%;
+    }
+
+    .identity-card {
+      padding: 1.25rem;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .avatar {
+      width: 84px;
+      height: 84px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #fff, #a3efe3);
+      color: var(--primary-dark);
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .identity-card h2 {
+      font-size: 1.6rem;
+      letter-spacing: -0.035em;
+      margin-bottom: 0.25rem;
+    }
+
+    .identity-card p {
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .focus-list {
+      display: grid;
+      gap: 0.65rem;
+      margin-top: 0.5rem;
+    }
+
+    .focus-list span {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.9rem;
+      padding: 0.78rem 0.92rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.86);
+      font-weight: 650;
+    }
+
+    .focus-list small {
+      color: #9fe6dd;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    section {
+      padding: 3.5rem 0;
+    }
+
+    .section-heading {
+      display: grid;
+      gap: 0.55rem;
+      margin-bottom: 1.75rem;
+      max-width: 820px;
+    }
+
+    .section-kicker {
+      color: var(--primary);
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.9rem, 3.5vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .metric-card {
+      padding: 1.35rem;
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 34px rgba(20, 32, 51, 0.06);
+    }
+
+    .metric-card strong {
+      display: block;
+      color: var(--primary-dark);
+      font-size: clamp(1.55rem, 3vw, 2.25rem);
+      line-height: 1;
+      letter-spacing: -0.045em;
+      margin-bottom: 0.55rem;
+    }
+
+    .metric-card span {
+      color: var(--muted);
+      font-weight: 650;
+      font-size: 0.93rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .about-card, .stack-card, .project-card, .experience-card, .education-card, .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: 0 14px 34px rgba(20, 32, 51, 0.06);
+    }
+
+    .about-card {
+      padding: 1.5rem;
+    }
+
+    .about-card h3 {
+      margin-bottom: 0.55rem;
+      font-size: 1.15rem;
+    }
+
+    .about-card p {
+      color: var(--muted);
+    }
+
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+    }
+
+    .stack-card {
+      padding: 1.2rem;
+    }
+
+    .stack-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.85rem;
+      color: var(--primary-dark);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.48rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.38rem 0.55rem;
+      border-radius: 999px;
+      background: var(--surface-strong);
+      color: #324153;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border: 1px solid rgba(219, 228, 238, 0.8);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .project-card {
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      min-height: 275px;
+    }
+
+    .project-number {
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+
+    .project-card h3 {
+      font-size: 1.35rem;
+      line-height: 1.15;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.025em;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .project-card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+      color: #344256;
+    }
+
+    .project-card li {
+      position: relative;
+      padding-left: 1.05rem;
+    }
+
+    .project-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 0.42rem;
+      height: 0.42rem;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .experience-card {
+      padding: 1.35rem;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 1.25rem;
+    }
+
+    .role-meta {
+      border-right: 1px solid var(--line);
+      padding-right: 1rem;
+    }
+
+    .role-meta strong {
+      display: block;
+      color: var(--text);
+      font-size: 1.05rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .role-meta span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 650;
+    }
+
+    .role-details ul {
+      display: grid;
+      gap: 0.65rem;
+      color: #344256;
+      list-style: none;
+    }
+
+    .role-details li {
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    .role-details li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 0.38rem;
+      height: 0.38rem;
+      background: var(--primary);
+      border-radius: 999px;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .education-card {
+      padding: 1.3rem;
+    }
+
+    .education-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .education-card p,
+    .education-card span {
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    .contact-card {
+      padding: clamp(1.5rem, 4vw, 2.4rem);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem;
+      align-items: center;
+      background:
+        linear-gradient(135deg, rgba(15, 95, 111, 0.95), rgba(16, 26, 42, 0.96)),
+        var(--primary);
+      color: #fff;
+      border: none;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .contact-card::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 999px;
+      right: -100px;
+      bottom: -130px;
+      background: rgba(34, 162, 143, 0.38);
+    }
+
+    .contact-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-card h2 {
+      font-size: clamp(1.8rem, 3vw, 2.65rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      margin-bottom: 0.65rem;
+    }
+
+    .contact-card p {
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 680px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: flex-end;
+    }
+
+    .contact-actions .button {
+      background: #fff;
+      color: var(--primary-dark);
+    }
+
+    .contact-actions .button.secondary {
+      background: rgba(255, 255, 255, 0.10);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.24);
+    }
+
+    footer {
+      padding: 2rem 0 2.4rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1.25rem;
+    }
+
+    .back-top {
+      color: var(--primary-dark);
+      font-weight: 800;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .metrics,
+      .stack-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .experience-card {
+        grid-template-columns: 1fr;
+      }
+
+      .role-meta {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        padding-right: 0;
+        padding-bottom: 0.9rem;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .menu-button {
+        display: inline-block;
+      }
+
+      .nav-links {
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        top: calc(100% + 8px);
+        display: grid;
+        gap: 0.2rem;
+        background: rgba(255, 255, 255, 0.98);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        padding: 0.8rem;
+        transform: translateY(-8px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+      }
+
+      .nav-links[data-open="true"] {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .nav-links a {
+        padding: 0.82rem 0.9rem;
+        border-radius: 12px;
+      }
+
+      .nav-links a:hover {
+        background: var(--surface-strong);
+      }
+
+      .nav-cta {
+        text-align: center;
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .hero-card,
+      .profile-panel {
+        border-radius: 22px;
+      }
+
+      .hero-actions,
+      .contact-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .metrics,
+      .stack-grid,
+      .projects-grid,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-card,
+      .about-card,
+      .stack-card,
+      .project-card,
+      .experience-card,
+      .education-card {
+        border-radius: 16px;
+      }
+
+      section {
+        padding: 2.4rem 0;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 420px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-card,
+      .profile-panel {
+        padding: 1.15rem;
+      }
+
+      .brand span:last-child {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Aditi Simha home">
+        <span class="brand-mark">AS</span>
+        <span>Aditi Simha</span>
+      </a>
+
+      <button class="menu-button" type="button" aria-label="Toggle navigation" aria-controls="nav-links" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="nav-links" data-open="false" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <span class="eyebrow">Cloud-Native Software Engineer</span>
+          <h1>Building dependable backend systems for real-world scale.</h1>
+          <p class="hero-subtitle">
+            Software Engineer with 3+ years of experience designing resilient microservices, production REST APIs, real-time data pipelines, and cloud-native systems across regulated enterprise environments.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">View Work</a>
+            <a class="button secondary" href="Aditi_Simha_Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/aditisimha" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+
+        <aside class="profile-panel" aria-label="Profile summary">
+          <div class="panel-inner">
+            <div class="identity-card">
+              <div class="avatar">AS</div>
+              <h2>Aditi Simha</h2>
+              <p>Backend engineering, distributed systems, API modernization, and production reliability.</p>
+            </div>
+            <div class="focus-list">
+              <span><small>01</small> Spring Boot Microservices</span>
+              <span><small>02</small> Real-Time Data Pipelines</span>
+              <span><small>03</small> REST API Design</span>
+              <span><small>04</small> CI/CD and Observability</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section aria-label="Impact metrics">
+      <div class="container metrics">
+        <div class="metric-card">
+          <strong>3+</strong>
+          <span>Years building enterprise software systems</span>
+        </div>
+        <div class="metric-card">
+          <strong>60%</strong>
+          <span>Clinical image retrieval latency reduction</span>
+        </div>
+        <div class="metric-card">
+          <strong>1.5M+</strong>
+          <span>Real-time GPS events processed</span>
+        </div>
+        <div class="metric-card">
+          <strong>2.8M+</strong>
+          <span>Research documents supported in RAG retrieval</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">About</span>
+          <h2>Engineering with reliability, clarity, and scale in mind.</h2>
+          <p>
+            Aditi works across backend architecture, API design, deployment, and performance tuning with a strong foundation in regulated enterprise systems.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-card">
+            <h3>Backend modernization</h3>
+            <p>
+              Experience migrating legacy C++ systems to Spring Boot microservices, improving latency, maintainability, and integration readiness for clinical workflows.
+            </p>
+          </article>
+          <article class="about-card">
+            <h3>Production-ready systems</h3>
+            <p>
+              Hands-on background in CI/CD, automated validation, monitoring, distributed tracing, and deployment readiness for high-availability environments.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Technical Skills</span>
+          <h2>A practical backend stack for distributed, cloud-native engineering.</h2>
+        </div>
+
+        <div class="stack-grid">
+          <article class="stack-card">
+            <h3>Languages</h3>
+            <div class="tag-list">
+              <span class="tag">Java</span>
+              <span class="tag">Python</span>
+              <span class="tag">C++</span>
+              <span class="tag">SQL</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </article>
+          <article class="stack-card">
+            <h3>Frameworks</h3>
+            <div class="tag-list">
+              <span class="tag">Spring Boot</span>
+              <span class="tag">Django</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Hibernate</span>
+              <span class="tag">Swagger</span>
+            </div>
+          </article>
+          <article class="stack-card">
+            <h3>Cloud & DevOps</h3>
+            <div class="tag-list">
+              <span class="tag">Docker</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">Jenkins</span>
+              <span class="tag">AWS</span>
+              <span class="tag">GCP Pub/Sub</span>
+            </div>
+          </article>
+          <article class="stack-card">
+            <h3>Data & Architecture</h3>
+            <div class="tag-list">
+              <span class="tag">Microservices</span>
+              <span class="tag">Kafka</span>
+              <span class="tag">Redis</span>
+              <span class="tag">Elasticsearch</span>
+              <span class="tag">Vector Search</span>
+            </div>
+          </article>
+          <article class="stack-card">
+            <h3>Testing & Tools</h3>
+            <div class="tag-list">
+              <span class="tag">JUnit</span>
+              <span class="tag">JBehave</span>
+              <span class="tag">Mockito</span>
+              <span class="tag">Splunk</span>
+              <span class="tag">New Relic</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Selected Projects</span>
+          <h2>Systems built for retrieval, streaming, and performance.</h2>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-number">Project 01</div>
+            <h3>ArXivRAG: Research Paper Document Intelligence</h3>
+            <p>RAG, LangChain, MCP</p>
+            <ul>
+              <li>Built scalable RAG infrastructure supporting semantic retrieval across 2.8M+ research documents.</li>
+              <li>Reduced query latency by 66% through optimized vector indexing and retrieval pipelines.</li>
+              <li>Designed modular abstraction layers for zero-downtime LLM failover, audit logging, and API orchestration.</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-number">Project 02</div>
+            <h3>Real-Time Trimet Pipeline</h3>
+            <p>Python, PostgreSQL, Pub/Sub, Kafka</p>
+            <ul>
+              <li>Built event-processing workflows handling 1.5M+ real-time GPS events.</li>
+              <li>Implemented optimized batching strategies and fault-tolerant consumer groups.</li>
+              <li>Designed PostgreSQL schema and partitioning for sub-second geospatial analytical queries.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Experience</span>
+          <h2>Enterprise engineering experience across cloud, APIs, data, and reliability.</h2>
+        </div>
+
+        <div class="experience-list">
+          <article class="experience-card">
+            <div class="role-meta">
+              <strong>Software Engineer</strong>
+              <span>Live Music Project</span>
+              <span>Oct 2025 - Present</span>
+            </div>
+            <div class="role-details">
+              <ul>
+                <li>Engineered analytics workflows using Redis cache invalidation strategies, reducing aggregation query load by 70% for real-time dashboards.</li>
+                <li>Architected secure role-based access control workflows in Django with multi-tenant data isolation and audit trail support.</li>
+                <li>Developed backend orchestration services via SendGrid using SPF/DKIM validation, increasing automated email deliverability to 85%.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="experience-card">
+            <div class="role-meta">
+              <strong>Software Engineer II</strong>
+              <span>Oracle Cerner</span>
+              <span>May 2022 - Aug 2023</span>
+            </div>
+            <div class="role-details">
+              <ul>
+                <li>Migrated RadNet's legacy C++ image retrieval engines to Spring Boot microservices, reducing clinical image retrieval latency by 60% across 12 IDN networks.</li>
+                <li>Designed a greenfield diagnostic reporting REST API using Swagger, Java, and OAuth 2.0 for 6+ consuming services.</li>
+                <li>Optimized Oracle and MySQL data-access workflows, accelerating API response times by 40% on high-volume production traffic.</li>
+                <li>Built CI/CD and validation pipelines using Jenkins, JUnit, and JBehave, increasing release reliability by 25%.</li>
+                <li>Drove distributed tracing strategy using Splunk and New Relic to reduce system MTTR.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="experience-card">
+            <div class="role-meta">
+              <strong>Software Engineer I</strong>
+              <span>Oracle Cerner</span>
+              <span>Jul 2020 - May 2022</span>
+            </div>
+            <div class="role-details">
+              <ul>
+                <li>Boosted backend throughput by 20% by refactoring performance-critical C++ modules for high-revenue radiology systems.</li>
+                <li>Led migration from SVN to Git, standardizing Gitflow branching and reducing merge conflicts by 30%.</li>
+                <li>Standardized service integration contracts and API documentation across three engineering squads, reducing integration errors by 40%.</li>
+                <li>Owned BDD test authoring, defect triage, and production deployment readiness for regulated healthcare environments.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="experience-card">
+            <div class="role-meta">
+              <strong>Software Intern</strong>
+              <span>Oracle Cerner</span>
+              <span>Jan 2020 - Jun 2020</span>
+            </div>
+            <div class="role-details">
+              <ul>
+                <li>Built Node.js web crawlers and internal metadata indexing tools backed by Elasticsearch, improving artifact searchability for 500+ engineers.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Education</span>
+          <h2>Computer science foundation with graduate-level specialization.</h2>
+        </div>
+
+        <div class="education-grid">
+          <article class="education-card">
+            <h3>Master of Science, Computer Science</h3>
+            <p>Portland State University</p>
+            <span>2025 • GPA: 3.85</span>
+          </article>
+          <article class="education-card">
+            <h3>Bachelor of Engineering, Computer Science</h3>
+            <p>Visvesvaraya Technological University</p>
+            <span>2020 • GPA: 4.0</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div>
+            <h2>Let's build reliable systems that scale.</h2>
+            <p>
+              Open to software engineering opportunities focused on backend systems, cloud-native services, API platforms, data pipelines, and enterprise modernization.
+            </p>
+          </div>
+          <div class="contact-actions">
+            <a class="button" href="mailto:simhaaditi@gmail.com">Email Aditi</a>
+            <a class="button secondary" href="Aditi_Simha_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Aditi Simha. Built for clean, fast, responsive portfolio viewing.</p>
+      <a class="back-top" href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-button");
+    const navLinks = document.querySelector("#nav-links");
+    const year = document.querySelector("#year");
+
+    if (year) {
+      year.textContent = new Date().getFullYear();
+    }
+
+    if (menuButton && navLinks) {
+      menuButton.addEventListener("click", () => {
+        const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+        menuButton.setAttribute("aria-expanded", String(!isOpen));
+        navLinks.dataset.open = String(!isOpen);
+      });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuButton.setAttribute("aria-expanded", "false");
+          navLinks.dataset.open = "false";
+        });
+      });
+    }
+  </script>
+</body>
+</html>
